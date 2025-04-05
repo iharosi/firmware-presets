@@ -1,0 +1,148 @@
+#$ TITLE: Vision Copter 4.5 Presets
+#$ FIRMWARE_VERSION: 4.5
+#$ CATEGORY: OTHER
+#$ STATUS: COMMUNITY
+#$ KEYWORDS: GPS, Failsafe, Modes, OSD, Receiver, TBS Crossfire, ExpressLRS
+#$ AUTHOR: Vision Copter
+#$ DESCRIPTION: Vision Copter's Betaflight 4.5 preset
+
+#$ OPTION_GROUP BEGIN: Configuration
+    #$ OPTION BEGIN (CHECKED): Personalization
+        set pilot_name = Vision Copter
+    #$ OPTION END
+
+    #$ OPTION BEGIN (CHECKED): Maximum ARM Angle
+        set small_angle = 180
+    #$ OPTION END
+
+    #$ OPTION BEGIN (CHECKED): Other Features
+        feature AIRMODE
+        feature GPS
+        feature TELEMETRY
+        feature LED_STRIP
+        feature OSD
+        feature ESC_SENSOR
+    #$ OPTION END
+
+    #$ OPTION BEGIN (CHECKED): Dshot Beacon Configuration
+        beacon RX_LOST
+        beacon RX_SET
+    #$ OPTION END
+
+    #$ OPTION BEGIN (CHECKED): Beeper Configuration
+        beeper -GYRO_CALIBRATED
+        beeper -DISARMING
+        beeper -ARMING
+        beeper -ARMING_GPS_FIX
+        beeper -BAT_CRIT_LOW
+        beeper -BAT_LOW
+        beeper -GPS_STATUS
+        beeper -ACC_CALIBRATION
+        beeper -ACC_CALIBRATION_FAIL
+        beeper -SYSTEM_INIT
+        beeper -ON_USB
+        beeper -BLACKBOX_ERASE
+        beeper -CAM_CONNECTION_OPEN
+        beeper -CAM_CONNECTION_CLOSE
+    #$ OPTION END
+#$ OPTION_GROUP END
+
+#$ OPTION_GROUP BEGIN: Power & Battery
+    #$ OPTION BEGIN (CHECKED): Lipo Battery (2200 mAh)
+        set vbat_min_cell_voltage = 330
+        set vbat_max_cell_voltage = 430
+        set vbat_warning_cell_voltage = 350
+        set bat_capacity = 2200
+    #$ OPTION END
+
+    #$ OPTION BEGIN (UNCHECKED): LiHV Battery (650 mAh)
+        set vbat_min_cell_voltage = 330
+        set vbat_max_cell_voltage = 440
+        set vbat_warning_cell_voltage = 350
+        set bat_capacity = 650
+    #$ OPTION END
+
+    #$ OPTION BEGIN (UNCHECKED): Li-ion Battery (8400 mAh)
+        set vbat_min_cell_voltage = 290
+        set vbat_max_cell_voltage = 420
+        set vbat_warning_cell_voltage = 310
+        set bat_capacity = 8400
+    #$ OPTION END
+#$ OPTION_GROUP END
+
+#$ OPTION_GROUP BEGIN: Failsafe
+    #$ OPTION BEGIN (CHECKED): Failsafe Switch
+        set failsafe_switch_mode = STAGE2
+    #$ OPTION END
+
+    #$ OPTION BEGIN (CHECKED): Stage 2 Settings
+        set failsafe_delay = 1
+        set failsafe_procedure = GPS-RESCUE
+        set gps_rescue_min_sats = 5
+        set gps_rescue_allow_arming_without_fix = ON
+    #$ OPTION END
+#$ OPTION_GROUP END
+
+#$ OPTION_GROUP BEGIN: Receiver
+    #$ OPTION BEGIN (CHECKED): Crossfire/ExpressLRS Receiver
+        set serialrx_provider = CRSF
+        map TAER1234
+    #$ OPTION END
+
+    #$ OPTION BEGIN (UNCHECKED): DJI Receiver
+        set serialrx_provider = SBUS
+    #$ OPTION END
+
+    #$ OPTION BEGIN (CHECKED): Modes (AUX)
+        aux 0 0 0 1700 2100 0 0
+        aux 1 1 2 1300 1700 0 0
+        aux 2 46 2 1700 2100 0 0
+        aux 3 13 1 1700 2100 0 0
+        aux 4 15 1 900 1300 0 0
+        aux 5 35 3 1700 2100 0 0
+        aux 6 49 4 1700 2100 0 0
+    #$ OPTION END
+#$ OPTION_GROUP END
+
+#$ OPTION_GROUP BEGIN: OSD
+    #$ OPTION BEGIN (CHECKED): Defaults
+        set osd_rssi_dbm_alarm = -100
+        set osd_vbat_pos = 2653
+        set osd_rssi_pos = 152
+        set osd_link_quality_pos = 2606
+        set osd_link_tx_power_pos = 24
+        set osd_rssi_dbm_pos = 2574
+        set osd_tim_2_pos = 2678
+        set osd_flymode_pos = 2134
+        set osd_anti_gravity_pos = 2554
+        set osd_throttle_pos = 2614
+        set osd_vtx_channel_pos = 373
+        set osd_crosshairs_pos = 345
+        set osd_current_pos = 2645
+        set osd_mah_drawn_pos = 2686
+        set osd_craft_name_pos = 3684
+        set osd_home_dir_pos = 2102
+        set osd_home_dist_pos = 2103
+        set osd_flight_dist_pos = 153
+        set osd_compass_bar_pos = 2070
+        set osd_altitude_pos = 19054
+        set osd_power_pos = 388
+        set osd_warnings_pos = 14806
+        set osd_avg_cell_voltage_pos = 2621
+        set osd_disarmed_pos = 2166
+        set osd_flip_arrow_pos = 2165
+        set osd_core_temp_pos = 2630
+    #$ OPTION END
+
+    #$ OPTION BEGIN (CHECKED): GPS
+        set osd_gps_speed_pos = 2638
+        set osd_gps_lon_pos = 3112
+        set osd_gps_lat_pos = 3080
+        set osd_gps_sats_pos = 2109
+        set osd_gps_sats_show_pdop = ON
+    #$ OPTION END
+
+    #$ OPTION BEGIN (UNCHECKED): ESC temperature
+        set osd_esc_tmp_pos = 2662
+    #$ OPTION END
+#$ OPTION_GROUP END
